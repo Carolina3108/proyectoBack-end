@@ -1,0 +1,56 @@
+POST http://localhost:3000/registrar 
+Content-Type: application/json
+
+{
+    "nombre":"Comercio 04", 
+    "direccion":"Chalatenango"
+}
+###
+
+GET http://localhost:3000/listadoComercios 
+### 
+
+GET http://localhost:3000/uno/6144ed93e2b2cea8e0f1c9fb
+###
+
+PUT http://localhost:3000/editarComercio/6144f3353657c09735031f4c 
+Content-Type: application/json
+
+{
+"nombre":"Comercio 01 modificado", "direccion":"Chalatenango"
+}
+###
+DELETE http://localhost:3000/eliminarComercio/6144ed93e2b2cea8e0f1c9fb
+
+//show dbs //use empredeapp //show collections //db.comercios.find()
+###
+
+//USUARIOS
+POST http://localhost:3000/registrarU 
+Content-Type: application/json
+
+{
+    "nombre":"Carolina Serrano", 
+    "email":"serrano@gmail.com", 
+    "usuario":"carolina", 
+    "password":"1234"
+}
+###
+GET http://localhost:3000/listadoUsuarios 
+### 
+
+GET http://localhost:3000/uno/614811cb78735ee63aa2abff
+###
+
+PUT http://localhost:3000/editarUsuario/614815029e20282b4f4f8a0e 
+Content-Type: application/json
+
+{
+
+    "nombre":"Carolina Serrano Luna", 
+    "email":"serrano@gmail.com", 
+    "usuario":"carolina", 
+    "password":"1234"
+}
+###
+DELETE http://localhost:3000/eliminarUsuario/6144ed93e2b2cea8e0f1c9fb
