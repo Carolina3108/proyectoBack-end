@@ -1,17 +1,17 @@
-import Router from "express"
-import uController from "../controllers/usuarioController.js"
-const ruta = Router();
+import Router from "express";
+import usuarioController from "../controllers/usuarioController.js";
+const router = Router();
 
-//RUTAS PARA USUARIO
+//routerS PARA USUARIO
 //todos
-ruta.get("/listadoUsuarios",uController.listado)
+router.get("/", usuarioController.listado);
 
-ruta.post("/registrarU",uController.registrar)
+router.post("/", usuarioController.registrar);
 //uno
-ruta.get("/uno/:id",uController.uno)
+router.get("/:id", usuarioController.uno);
 
-ruta.delete("/eliminarUsuario/:id",uController.eliminar)
+router.delete("/:id", usuarioController.eliminar);
 
-ruta.put("/editarUsuario/:id",uController.actualizar)
+router.put("/:id", usuarioController.actualizar);
 
-export default ruta
+export default router;

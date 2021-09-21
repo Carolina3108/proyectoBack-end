@@ -1,48 +1,69 @@
-POST http://localhost:3000/registrar 
+
+@urlComercios = http://localhost:3000/comercios/
+@urlUsuarios = http://localhost:3000/usuarios/
+@urlAutenticacion = http://localhost:3000/autenticacion/
+
+POST {{urlAutenticacion}}
 Content-Type: application/json
 
 {
-    "nombre":"Comercio 04", 
+    "usuario":"carolina",
+    "clave":"1234"
+}
+###
+//Comercios
+GET {{urlComercios}}
+### 
+POST {{urlComercios}} 
+Content-Type: application/json
+
+{
+    "latitud":"38.8951",
+    "longitud":"-77.0364",
+    "nombre":"La esquina del sabor",
+    "nombrePropietario":"Antony Duarte",
+    "telefono":"70079032",
+    "categoria":"Comida Mexicana",
+    "descripcion":"Descripcion random",
     "direccion":"Chalatenango"
 }
 ###
 
-GET http://localhost:3000/listadoComercios 
-### 
-
-GET http://localhost:3000/uno/6144ed93e2b2cea8e0f1c9fb
+GET {{urlComercios}}61494f97f714b8c2f6a429eb
 ###
 
-PUT http://localhost:3000/editarComercio/6144f3353657c09735031f4c 
+PUT {{urlComercios}}614951a39dc835a135f61b63 
 Content-Type: application/json
 
 {
-"nombre":"Comercio 01 modificado", "direccion":"Chalatenango"
+"nombre":"Comercio 01 modificado", "direccion":"Nueva Concepcion"
 }
 ###
-DELETE http://localhost:3000/eliminarComercio/6144ed93e2b2cea8e0f1c9fb
+DELETE {{urlComercios}}61494f97f714b8c2f6a429eb
 
 //show dbs //use empredeapp //show collections //db.comercios.find()
 ###
 
 //USUARIOS
-POST http://localhost:3000/registrarU 
+GET {{urlUsuarios}}
+### 
+POST {{urlUsuarios}}
 Content-Type: application/json
 
 {
     "nombre":"Carolina Serrano", 
+    "usuario":"carolina",
     "email":"serrano@gmail.com", 
     "usuario":"carolina", 
-    "password":"1234"
+    "password":"1234",
+    "activo":true
 }
 ###
-GET http://localhost:3000/listadoUsuarios 
-### 
 
-GET http://localhost:3000/uno/614811cb78735ee63aa2abff
+GET {{urlUsuarios}}614951e19dc835a135f61b68
 ###
 
-PUT http://localhost:3000/editarUsuario/614815029e20282b4f4f8a0e 
+PUT {{urlUsuarios}}614951e19dc835a135f61b68 
 Content-Type: application/json
 
 {
@@ -53,4 +74,4 @@ Content-Type: application/json
     "password":"1234"
 }
 ###
-DELETE http://localhost:3000/eliminarUsuario/6144ed93e2b2cea8e0f1c9fb
+DELETE {{urlUsuarios}}614951e19dc835a135f61b68
